@@ -9,7 +9,7 @@ int main()
 
     int x=5,y=2,z=3,a=4,b=7;
 
-    int mini = min{(x,y,z,a,b});
+    int mini = min({x,y,z,a,b}); // same things goes for max function .
 
     cout<<"minimum value from multiple variable is = "<<mini<<endl;
 

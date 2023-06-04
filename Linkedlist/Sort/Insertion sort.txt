@@ -1,0 +1,25 @@
+This code implements the insertion sort algorithm to sort an array of integers in ascending order. Here's a step-by-step explanation of how it works:
+
+1. The code starts by declaring variables `i`, `j`, and `n`. `i` and `j` are loop counters, and `n` will store the size of the array.
+
+2. The user is prompted to enter the value of `n`, which represents the number of elements in the array.
+
+3. A vector `a` of size `n` is declared to store the elements of the array.
+
+4. A loop is used to read the input values from the user and store them in the vector `a`.
+
+5. The insertion sort algorithm is then applied to sort the elements of the array. The outer loop runs from `i = 1` to `n-1`.
+
+6. Inside the outer loop, a variable `idx` is initialized with the value of `i`.
+
+7. The inner while loop runs as long as `idx` is greater than or equal to 1.
+
+8. In each iteration of the inner loop, the code checks if the element at index `idx-1` is greater than the element at index `idx`. If it is, the elements are swapped using the `swap` function, and `idx` is decremented by 1.
+
+9. If the element at index `idx-1` is not greater than the element at index `idx`, it means the current element is in the correct position, and the inner loop is terminated.
+
+10. After the inner loop finishes, the elements before the current `i` will be sorted in ascending order.
+
+11. Finally, the sorted array is printed.
+
+The time complexity of this code is O(n^2) because the inner while loop may run up to n times in the worst case. The space complexity is O(n) because the array `a` is used to store the input elements.

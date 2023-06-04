@@ -1,0 +1,86 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>a;
+    a.resize(n);//O(n)
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+    // n pass
+    //time complexity :O(n^2)
+    //memory complexity :0(n)
+    /*
+     pass =0, cnt = n-1
+     pass =1 , cnt = n -2
+     pass = n-1 . cnt = 0;
+    */
+    for(int pass = 0; pass<n; pass++)
+    {
+        int last = n-1-pass;
+        bool sorted = true;
+        for(int j=0;j<=last-1;j++)
+        {
+            if(a[j] > a[j+1])
+            {
+                swap(a[j] , a[j+1]);
+                sorted = false;
+            }
+
+        }
+        if(sorted)
+                break;
+        //cout<<endl;
+        cout<<"After pass "<<pass<<": ";
+        for(int i=0;i<n;i++)
+        {
+            cout<<a[i]<<" ";
+        }cout<<"\n";
+    }
+    cout<<"After sorting"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+
+
+    return 0;
+}
+
+
+
+This code implements the Bubble Sort algorithm to sort a given array of integers in ascending order. Here's a step-by-step explanation of how the code works:
+
+The code begins by including the necessary C++ standard libraries and declaring the main function.
+
+Inside the main function, it starts by reading an integer n from the user, which represents the size of the array.
+
+Next, a vector a of integers is declared to store the array elements. The size of the vector is set to n using the resize function.
+
+A for loop is used to read n integers from the user and store them in the vector a.
+
+The main part of the code implements the Bubble Sort algorithm using nested for loops.
+
+The outer for loop controls the number of passes required to sort the array. It iterates n times, representing each pass.
+
+Inside each pass, a variable last is calculated as n-1-pass, which represents the index of the last element that needs to be compared in the current pass.
+
+A boolean variable sorted is initialized as true at the beginning of each pass. It is used to check if any swaps are made in the inner loop. If no swaps are made, it means the array is already sorted, and the sorting process can be terminated early.
+
+The inner for loop compares adjacent elements of the array and swaps them if they are in the wrong order. If a swap is made, the sorted variable is set to false.
+
+After the inner loop completes, the code checks the value of sorted. If it is still true, the array is already sorted, and the sorting process is terminated by breaking out of the outer loop.
+
+If sorted is false, the code prints the current state of the array after the current pass. This is done by iterating over the elements of the array and printing them.
+
+After the sorting process completes, the code prints the sorted array by iterating over the elements of a and printing them.
+
+The main function ends, and the program returns 0 to indicate successful execution.
+
+In summary, this code uses the Bubble Sort algorithm to sort an array of integers. It repeatedly compares adjacent elements and swaps them if they are in the wrong order, until the array is fully sorted. The code includes some optimizations like the sorted flag to detect early termination if the array is already sorted.
